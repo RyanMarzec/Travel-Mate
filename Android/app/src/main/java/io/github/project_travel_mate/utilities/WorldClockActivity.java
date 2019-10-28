@@ -32,12 +32,9 @@ public class WorldClockActivity extends AppCompatActivity {
     @BindView(R.id.availableID)
     Spinner mTimeZoneChooser;
 
-    //private CustomAnalogClock mAnalogClock;
     private static final String DEFAULT_TIME_ZONE_KEY = "defaultTimeZone";
-    //private TextClock mTextClock;
     private long mMiliSeconds;
     private ArrayAdapter<String> mIdAdapter;
-    //private Spinner mTimeZoneChooser;
     private Calendar mCurrent;
 
     @Override
@@ -46,10 +43,6 @@ public class WorldClockActivity extends AppCompatActivity {
         setContentView(R.layout.activity_utilities_world_clock);
         ButterKnife.bind(this);
         setTitle(R.string.text_clock);
-
-        //mTextClock = findViewById(R.id.clock_digital);
-        //mAnalogClock = findViewById(R.id.clock_analog);
-        //mTimeZoneChooser = findViewById(R.id.availableID); // choosing time zone
 
         String[] idArray = TimeZone.getAvailableIDs();
         mIdAdapter = new ArrayAdapter<>(this,
