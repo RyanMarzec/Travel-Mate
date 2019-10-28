@@ -18,6 +18,7 @@ import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import io.github.project_travel_mate.R;
 import objects.ZoneName;
 
@@ -37,10 +38,9 @@ public class TimezoneListViewActivity extends Activity implements TextWatcher {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timezone_listview);
-
+        ButterKnife.bind(this);
+        
         timezone_names = new ArrayList<>();
-        mListview = findViewById(R.id.listView);
-        mTimezoneSearch = findViewById(R.id.timezoneSearch);
 
         mContext = this;
         addTimezones();
