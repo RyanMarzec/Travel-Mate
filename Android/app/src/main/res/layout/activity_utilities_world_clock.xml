@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
     <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,42 +14,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/white"
         tools:context=".utilities.WorldClockActivity">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="fill_parent"
+            <AutoCompleteTextView
+                android:id="@+id/actvTimezone"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="10dp"
-                android:orientation="horizontal"
-                android:weightSum="3"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
+                android:completionThreshold="0"
+                android:hint="@string/select_timezone"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
-                <TextView
-                    android:id="@+id/tvTimeZone"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/select_timezone"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:layout_weight="1"/>
-
-                <Spinner
-                    android:id="@+id/availableID"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:spinnerMode="dialog"
-                    android:layout_weight="2"
-                    android:padding="5dp"/>
-            </LinearLayout>
+            <android.widget.TextClock
+                android:id="@+id/clock_digital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:format12Hour="@string/date_format_hours_12"
+                android:format24Hour="@string/date_format_hours_24"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clock_analog" />
 
             <io.github.project_travel_mate.utilities.CustomAnalogClock
                 android:id="@+id/clock_analog"
@@ -54,23 +56,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-                app:layout_constraintVertical_bias="0.325" />
-
-            <android.widget.TextClock
-                android:id="@+id/clock_digital"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|bottom"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/clock_analog"
-                app:layout_constraintVertical_bias="0.104" />
+                app:layout_constraintTop_toBottomOf="@+id/actvTimezone" />
         </android.support.constraint.ConstraintLayout>
 
 
