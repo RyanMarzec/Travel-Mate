@@ -27,7 +27,6 @@ public class ChecklistActivity extends AppCompatActivity {
         setContentView(R.layout.activity_check_list);
         ButterKnife.bind(this);
 
-        //Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         Fragment fragment;
